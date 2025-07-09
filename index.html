@@ -2,12 +2,12 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/5ee924b701.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Caique - Music</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -47,39 +47,65 @@
         <main>
             <header class="search-bar">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input placeholder="O que você quer ouvir?">
+                <input placeholder="O que você quer ouvir?" />
             </header>
             <section class="content">
                 <h2>Artistas Populares</h2>
                 <div class="artists-grid">
-                      <!--Inserir dados com JS -->
+                    <!--Inserir dados com JS -->
                 </div>
-                <audio id="player" src=""></audio>
-                <div class="controls">
-                    <button id="prevButton"><i class='bx bx-skip-previous'></i></button>
-                    <button id="playPouseButton"><i class='bx bx-caret-right'></i></button>
-                    <button id="nextButton"><i class='bx bx-skip-next'></i></button>
-                </div>
-                      
-
 
                 <h2>Albuns Populares</h2>
                 <div class="albums-grid">
                     <!--Inserir dados com JS -->
                 </div>
-                
             </section>
         </main>
     </div>
-    <div class="banner">
-        <div>
-            <h2>Testar o Premium de graça</h2>
-            <P>Inscreva-se para curtir músicas ilimitadas e Podcasts só com alguns anúcios. Não precisa de um cartão de crédito.</P>
+
+    <!-- Barra de áudio FIXA na parte inferior -->
+    <div class="audio-bar">
+        <div class="now-playing-info">
+            <img id="album-cover" src="./img/default-cover.png" alt="Capa do álbum" />
+            <div class="now-playing">
+                <p id="current-track-name">Nenhuma música tocando</p>
+            </div>
         </div>
-        <button>Inscreva-se Grátis</button>
+
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progressBar" value="0" min="0" max="100" />
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="prevButton"><i class="bx bx-skip-previous"></i></button>
+            <button id="playPauseButton"><i class="bx bx-play"></i></button>
+            <button id="nextButton"><i class="bx bx-skip-next"></i></button>
+            <button id="repeatButton" title="Repetir"><i class="bx bx-repeat"></i></button>
+            <button id="shuffleButton" title="Aleatório"><i class="bx bx-shuffle"></i></button>
+            <input
+                id="volumeControl"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                title="Volume"
+            />
+        </div>
+
+        <audio id="player" src="" preload="auto"></audio>
+    </div>
+
+    
+    <div class="theme-toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="themeCheckbox" />
+            <span class="slider round"></span>
+        </label>
+        <span></span>
     </div>
 </body>
 <script src="./scripts.js"></script>
-
-
 </html>
