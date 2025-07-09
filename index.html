@@ -7,9 +7,11 @@
     <script src="https://kit.fontawesome.com/5ee924b701.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Caique - Music</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+    <script type="module" src="script.js"></script>
     <div class="container">
         <nav class="sidebar">
             <div class="nav-logo">
@@ -50,8 +52,16 @@
             <section class="content">
                 <h2>Artistas Populares</h2>
                 <div class="artists-grid">
-                    <!--Inserir dados com JS -->
+                      <!--Inserir dados com JS -->
                 </div>
+                <audio id="player" src=""></audio>
+                <div class="controls">
+                    <button id="prevButton"><i class='bx bx-skip-previous'></i></button>
+                    <button id="playPouseButton"><i class='bx bx-caret-right'></i></button>
+                    <button id="nextButton"><i class='bx bx-skip-next'></i></button>
+                </div>
+                      
+
 
                 <h2>Albuns Populares</h2>
                 <div class="albums-grid">
